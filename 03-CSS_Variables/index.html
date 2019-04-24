@@ -62,7 +62,20 @@
     </style>
 
     <script>
+        const inputs = document.querySelectorAll('.controls input');
 
+        function handleUpdate() {
+            // dataset 속성은 HTML이나 DOM 요소의 커스텀 데이터 속성(data-*)에 대한 읽기와 쓰기 접근을 허용.
+            const pixel = this.dataset.sizing || ''; // this는 마우스오버 한 input 태그를 가리킴.
+
+            /* documentElement 는 읽기 전용 속성으로 document 의 루트 요소인 Element를 반환.
+               (가령, HTML 문서의 <html> 요소) */
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + pixel);
+            // document.documentElement.style.setProperty(`--${this.name}`, this.value + `px`);
+        }
+
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
     </script>
 
 </body>
