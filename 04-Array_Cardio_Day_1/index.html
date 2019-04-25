@@ -83,6 +83,17 @@
         // 8. Reduce Exercise
         // Sum up the instances of each of these
         const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+        const countData = data.reduce(function (arr, item) {
+            if (item in arr) {
+                arr[item]++;
+            } else {
+                arr[item] = 1;
+            }
+            return arr;
+        }, {});
+
+        console.log(countData);
     </script>
 </body>
 
