@@ -48,9 +48,11 @@
 
         // Array.prototype.reduce()
         // 4. How many years did all the inventors live?
-        const totalLive = inventors.reduce(function (total, inventor) {
-            return total + (inventor.passed - inventor.year);
-        }, 0); // 0은 total의 초기값
+        // const totalLive = inventors.reduce(function (total, inventor) {
+        //     return total + (inventor.passed - inventor.year);
+        // }, 0); // 0은 total의 초기값
+        const totalLive = inventors.reduce((a, b) => { return a + (b.passed - b.year) }, 0);
+
         console.log(totalLive);
 
         // 5. Sort the inventors by years lived
