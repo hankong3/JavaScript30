@@ -54,6 +54,14 @@
         const idx = comments.findIndex(comment => comment.id === 823423);
 
         console.log(idx);
+
+        // comments.splice(idx, 1);
+
+        const newCommnets = [
+            ...comments.slice(0, idx),
+            ...comments.slice(idx + 1)
+        ]
+
     </script>
 </body>
 
