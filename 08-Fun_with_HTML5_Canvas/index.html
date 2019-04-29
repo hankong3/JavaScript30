@@ -39,6 +39,16 @@
             if (hue >= 360) {
                 hue = 0;
             }
+
+            if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+                line = !line;
+            }
+
+            if (line) {
+                ctx.lineWidth++;
+            } else {
+                ctx.lineWidth--;
+            }
         }
 
         canvas.addEventListener('mousemove', draw);
