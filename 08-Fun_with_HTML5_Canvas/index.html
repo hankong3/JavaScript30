@@ -30,10 +30,14 @@
             ctx.moveTo(lastX, lastY);
             ctx.lineTo(e.offsetX, e.offsetY);
             ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
         }
 
         canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mousedown', () => painting = true);
+        canvas.addEventListener('mousedown', (e) => {
+            painting = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
         canvas.addEventListener('mouseup', () => painting = false);
         canvas.addEventListener('mouseout', () => painting = false);
     </script>
