@@ -21,8 +21,14 @@ function updateButton() {
     toggle.textContent = icon;
 }
 
+function skip() {
+    // parseFloat() 함수는 문자열을 분석해 부동소수점 실수로 반환.
+    video.currentTime += parseFloat(this.dataset.skip);
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 
 toggle.addEventListener('click', togglePlay);
+skipButtons.forEach(button => button.addEventListener('click', skip));
