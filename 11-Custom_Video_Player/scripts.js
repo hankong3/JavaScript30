@@ -40,18 +40,18 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
-video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
-video.addEventListener('timeupdate', handleProgress);
+video.addEventListener('click', togglePlay);    // 화면 클릭 시 비디오 재생 & 일시정지
+video.addEventListener('play', updateButton);   // 비디오 재생 시 아이콘 업데이트
+video.addEventListener('pause', updateButton);  // 비디오 일시정지 시 아이콘 업데이트
+video.addEventListener('timeupdate', handleProgress);   // 비디오 재생바 싱크 맞춤
 
-toggle.addEventListener('click', togglePlay);
-skipButtons.forEach(button => button.addEventListener('click', skip));
-ranges.forEach(range => range.addEventListener('change', rangeUpdate));
-ranges.forEach(range => range.addEventListener('mousemove', rangeUpdate));
+toggle.addEventListener('click', togglePlay);   // 버튼 클릭 시 비디오 재생 & 일시정지
+skipButtons.forEach(button => button.addEventListener('click', skip));  // 스킵 버튼
+ranges.forEach(range => range.addEventListener('change', rangeUpdate)); // 음량 & 재생속도 조절
+ranges.forEach(range => range.addEventListener('mousemove', rangeUpdate));  // 음량 & 재생속도 조절
 
-let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+let mousedown = false;  // 플래그
+progress.addEventListener('click', scrub);  // 재생바 클릭 시 재생시간 변경
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e)); // 재생바 클릭 + 이동 시 재생시간 변경
+progress.addEventListener('mousedown', () => mousedown = true); // 마우스 클릭 시 플래그 true
+progress.addEventListener('mouseup', () => mousedown = false);  // 마우스 클릭하지 않았을 때 플래그 false
