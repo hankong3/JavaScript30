@@ -16,6 +16,10 @@
       console.log(e.key);
       keyArr.push(e.key);
       keyArr.splice(-secretCode.length - 1, keyArr.length - secretCode.length);
+      if (keyArr.join('').includes(secretCode)) {
+        console.log('DING DING!');
+        cornify_add();
+      }
       console.log(keyArr);
     });
   </script>
