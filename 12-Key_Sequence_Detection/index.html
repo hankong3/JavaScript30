@@ -10,10 +10,12 @@
 <body>
   <script>
     const keyArr = [];
+    const secretCode = 'wesbos';
 
     window.addEventListener('keyup', (e) => {
       console.log(e.key);
       keyArr.push(e.key);
+      keyArr.splice(-secretCode.length - 1, keyArr.length - secretCode.length);
       console.log(keyArr);
     });
   </script>
