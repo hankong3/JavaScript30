@@ -9,7 +9,13 @@
 
 <body>
   <script>
+    const keyArr = [];
 
+    window.addEventListener('keyup', (e) => {
+      console.log(e.key);
+      keyArr.push(e.key);
+      console.log(keyArr);
+    });
   </script>
 </body>
 
