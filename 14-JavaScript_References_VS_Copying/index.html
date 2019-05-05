@@ -10,6 +10,23 @@
 
     <script>
         // start with strings, numbers and booleans
+        let name = 'wes';
+        let name2 = name;
+        console.log(name, name2);
+        name = 'James';
+        console.log(name, name2);
+
+        let num = 100;
+        let num2 = num;
+        console.log(num, num2);
+        num = 200;
+        console.log(num, num2);
+
+        let bool = true;
+        let bool2 = bool;
+        console.log(bool, bool2);
+        bool = false;
+        console.log(bool, bool2);
 
         // Let's say we have an array
         const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
@@ -44,13 +61,13 @@
             age: 80
         };
 
-    // and think we make a copy:
+        // and think we make a copy:
 
-    // how do we take a copy instead?
+        // how do we take a copy instead?
 
-    // We will hopefully soon see the object ...spread
+        // We will hopefully soon see the object ...spread
 
-    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+        // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 
     </script>
 
