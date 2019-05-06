@@ -50,6 +50,10 @@
         function addItem(e) {
             e.preventDefault();
             const text = (this.querySelector('[name=item]')).value;
+            const item = {
+                text: text,
+                done: false
+            }
         }
 
         addItems.addEventListener('submit', addItem);
