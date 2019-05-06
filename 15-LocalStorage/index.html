@@ -49,6 +49,7 @@
 
         function addItem(e) {
             e.preventDefault();
+            const text = (this.querySelector('[name=item]')).value;
         }
 
         addItems.addEventListener('submit', addItem);
