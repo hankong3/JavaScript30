@@ -75,7 +75,8 @@
         }
 
         function toggleDone(e) {
-
+            if (!e.target.matches('input')) return; // skip this unless it's an input
+            console.log(e.target);
         }
 
         addItems.addEventListener('submit', addItem);
