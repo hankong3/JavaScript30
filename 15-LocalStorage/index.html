@@ -60,7 +60,7 @@
             // localStorage는 문자열만 저장이 가능
             // 따라서 JSON.stringify()을 사용하여 문자열로 저장
             localStorage.setItem('items', JSON.stringify(items));
-            this.reset();
+            this.reset();   // input value 초기화
         }
 
         function populateList(plates = [], platesList) {
@@ -72,14 +72,16 @@
                     </li>
                 `;
             }).join('');
+            // join('')으로 배열 내의 모든 li를 연결해 하나의 문자열로 만듦
+            // ex) <li>...</li>, <li>...</li> => <li>...</li><li>...</li>
         }
 
         function toggleDone(e) {
             if (!e.target.matches('input')) return; // skip this unless it's an input
-            const el = e.target;
-            const index = el.dataset.index;
+            const el = e.target;                    // checkbox
+            const index = el.dataset.index;         // checkbox index
             items[index].done = !items[index].done;
-            localStorage.setItem('items', JSON.stringify(items));
+            localStorage.setItem('items', JSON.stringify(items));   // 변경사항 문자열로 저장
             populateList(items, itemsList);
         }
 
