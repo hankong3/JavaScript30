@@ -44,6 +44,14 @@
         function shadow(e) {
             const { offsetWidth: width, offsetHeight: height } = hero;
             let { offsetX: x, offsetY: y } = e;
+
+            // hero 가 아닌 text 상에서 마우스가 움직일 경우 x 와 y 값이 
+            // h1 안에서의 상대값이 되는 문제를 해결하기 위한 조건문
+            // x, y 값을 hero 입장의 절대값으로 변환
+            if (this !== e.target) {
+                x = x + e.target.offsetLeft;
+                y = y + e.target.offsetTop;
+            }
         }
 
         hero.addEventListener('mousemove', shadow);
