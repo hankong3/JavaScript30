@@ -184,6 +184,28 @@
         </li>
     </ul>
     <script>
+        const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+
+        // 태그 안에 data-<속성이름>
+        // JavaScript 에서 dataset.<속성이름> 으로 사용
+        const seconds = timeNodes
+            .map(node => node.dataset.time)
+            .map(timeCode => {
+                // map(parseFloat) 로 문자열을 숫자로 변환
+                // ex) ["4", "58"] -> [4, 58]
+                const [mins, secs] = timeCode.split(':').map(parseFloat);
+                return (mins * 60) + secs;
+            })  // reduce() 를 이용하여 합산
+            .reduce((total, vidSeconds) => total + vidSeconds);
+
+        let secondsLeft = seconds;
+        const hours = Math.floor(secondsLeft / 3600);
+        secondsLeft = secondsLeft % 3600;
+
+        const mins = Math.floor(secondsLeft / 60);
+        secondsLeft = secondsLeft % 60;
+
+        console.log(`Total Play Time: ${hours}:${mins}:${secondsLeft}`);
     </script>
 </body>
 
