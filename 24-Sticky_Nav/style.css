@@ -43,6 +43,11 @@ h1 {
     text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}
+
 nav {
     background: black;
     top: 0;
