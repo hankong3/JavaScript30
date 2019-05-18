@@ -42,9 +42,14 @@
         let startX;
         let scrollLeft;
 
-        slider.addEventListener('mousedown', () => {
+        slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
+            // pageX: 브라우저 페이지에서의 x좌표
+            // offsetLeft: 부모 요소에 대한 상대적인 x좌표
+            startX = e.pageX - slider.offsetLeft;
+            // scrollLeft: 요소의 스크롤 x좌표
+            scrollLeft = slider.scrollLeft;
         });
 
         slider.addEventListener('mouseleave', () => {
@@ -57,8 +62,12 @@
             slider.classList.remove('active');
         });
 
-        slider.addEventListener('mousemove', () => {
+        slider.addEventListener('mousemove', (e) => {
             if (!isDown) return; // stop the function from running
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; // scroll speed x3 fast
+            slider.scrollLeft = scrollLeft - walk;
         });
     </script>
 
