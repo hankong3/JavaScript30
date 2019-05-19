@@ -22,11 +22,13 @@
         const video = document.querySelector('.flex');
 
         function handleMove(e) {
-            const y = e.pageY - speed.offsetTop;
+            const y = e.pageY - speed.offsetTop; // bar 마우스 위치 y좌표
             const percent = y / speed.offsetHeight;
+            console.log(speed.offsetHeight);
             const min = 0.4;
             const max = 4;
-            const height = Math.round(percent * 100) + '%';
+            // Math.round() 함수는 입력값을 반올림한 수와 가장 가까운 정수 값을 반환
+            const height = Math.round(percent * 100) + '%'; // 0~100%
             const playbackRate = percent * (max - min) + min;
 
             bar.style.height = height;
