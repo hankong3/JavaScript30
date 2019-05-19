@@ -22,8 +22,8 @@
         const video = document.querySelector('.flex');
 
         function handleMove(e) {
-            const y = e.pageY - this.offsetTop;
-            const percent = y / this.offsetHeight;
+            const y = e.pageY - speed.offsetTop;
+            const percent = y / speed.offsetHeight;
             const min = 0.4;
             const max = 4;
             const height = Math.round(percent * 100) + '%';
@@ -34,7 +34,11 @@
             video.playbackRate = playbackRate;
         }
 
-        speed.addEventListener('mousemove', handleMove);
+        let mousedown = false; // 플래그
+        speed.addEventListener('click', handleMove);
+        speed.addEventListener('mousemove', (e) => mousedown && handleMove(e));
+        speed.addEventListener('mousedown', () => mousedown = true);
+        speed.addEventListener('mouseup', () => mousedown = false);
     </script>
 </body>
 
