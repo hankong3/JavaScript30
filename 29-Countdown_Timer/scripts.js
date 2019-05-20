@@ -1,6 +1,7 @@
 let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
+const buttons = document.querySelectorAll('[data-time]');
 
 function timer(seconds) {
     const now = Date.now();
@@ -37,3 +38,12 @@ function displayEndTime(timestamp) {
     const minutes = end.getMinutes();
     endTime.textContent = `Be Back At ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
 }
+
+function startTimer() {
+    // parseInt() 는 문자열 인자의 구문을 분석해 특정 진수(수의 진법 체계에 기준이 되는 값)의 정수를 리턴
+    // this.dataset.time: string -> parseInt(this.dataset.time): number
+    const seconds = parseInt(this.dataset.time);
+    timer(seconds);
+}
+
+buttons.forEach(button => button.addEventListener('click', startTimer));
