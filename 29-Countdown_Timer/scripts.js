@@ -52,7 +52,7 @@ function startTimer() {
 buttons.forEach(button => button.addEventListener('click', startTimer));
 document.customForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const mins = this.minutes.value;
+    const mins = this.minutes.value; // 이 부분은 왜 parseInt() 를 사용하지 않을까?
     timer(mins * 60);
     this.reset();
 });
