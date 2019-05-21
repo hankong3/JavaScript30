@@ -7,6 +7,7 @@ function timer(seconds) {
     // clear any existing timers
     clearInterval(countdown);
 
+    // Date.now() 메소드는 UTC 기준으로 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된 밀리 초를 반환
     const now = Date.now();
     const then = now + seconds * 1000;
     displayTimeLeft(seconds);
