@@ -2,7 +2,7 @@
 JavaScript30 Challenge
 
 ## First Challenge
-Start Date: Apr 22, 2019
+Start Date: Apr 22, 2019  
 End Date: May 21, 2019
 
 It was too hard training😅.  
