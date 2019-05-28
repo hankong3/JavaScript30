@@ -18,3 +18,7 @@ function getDate() {
     const hourDeg = (hour / 12) * 360 + ((mins / 60) * 30) + deg;
     hourHand.style.transform = `rotate(${hourDeg}deg)`;
 }
+
+setInterval(getDate, 1000);
+
+getDate();
