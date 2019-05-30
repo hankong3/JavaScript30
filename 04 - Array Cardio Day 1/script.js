@@ -102,7 +102,11 @@ const totalYears = inventors.reduce((total, inventor) => {
 console.log(totalYears);
 
 // 5. Sort the inventors by years lived
-const oldestOrder = inventors.sort((a, b) => (a.passed - a.year) > (b.passed - b.year) ? -1 : 1);
+const oldestOrder = inventors.sort((a, b) => {
+    const prev = a.passed - a.year;
+    const next = b.passed - b.year;
+    return prev > next ? -1 : 1
+});
 console.table(oldestOrder);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
@@ -115,6 +119,12 @@ console.table(oldestOrder);
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+const lastNameOrder = people.sort((prev, next) => {
+    const [aLast, aFirst] = prev.split(', ');
+    const [bLast, bFirst] = next.split(', ');
+    return aLast > bLast ? 1 : -1;
+});
+console.log(lastNameOrder);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
