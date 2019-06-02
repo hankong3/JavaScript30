@@ -47,3 +47,8 @@ const newComments = [
 ];
 
 console.log(newComments);
+
+// Array.prototype.splice()
+comments.splice(index, 1);
+
+console.log(comments);
