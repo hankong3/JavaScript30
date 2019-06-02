@@ -39,3 +39,11 @@ console.log(comment);
 const index = comments.findIndex(comment => comment.id === 823423);
 
 console.log(index);
+
+// Array.prototype.slice()
+const newComments = [
+  ...comments.slice(0, index),
+  ...comments.slice(index + 1)
+];
+
+console.log(newComments);
