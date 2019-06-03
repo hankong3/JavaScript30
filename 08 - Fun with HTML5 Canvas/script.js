@@ -11,15 +11,20 @@ ctx.lineWidth = 100;
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+let color = 0;
 
 function draw(e) {
     if (!isDrawing) return;
     // console.log(e);
+    ctx.strokeStyle = `hsl(${color}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY];
+
+    color++;
+    if (color >= 360) color = 0;
 }
 
 if (canvas) {
