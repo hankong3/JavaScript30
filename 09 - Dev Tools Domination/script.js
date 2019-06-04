@@ -22,6 +22,7 @@ console.log('%cBlue', 'color:blue; font-size:30px;');
 console.warn('Warning!!!');
 
 // Error :|
+console.error('Error⛔');
 
 // Info
 
