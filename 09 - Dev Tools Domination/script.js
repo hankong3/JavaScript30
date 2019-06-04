@@ -9,26 +9,28 @@ function makeGreen() {
     p.style.fontSize = '50px';
 }
 
-    // Regular
+// Regular
+console.log('Hello!');
 
-    // Interpolated
+// Interpolated
 
-    // Styled
+// Styled
 
-    // warning!
+// warning!
 
-    // Error :|
+// Error :|
 
-    // Info
+// Info
 
-    // Testing
+// Testing
+// const p = document.querySelector('p');
 
-    // clearing
+// clearing
 
-    // Viewing DOM Elements
+// Viewing DOM Elements
 
-    // Grouping together
+// Grouping together
 
-    // counting
+// counting
 
-    // timing
+// timing
