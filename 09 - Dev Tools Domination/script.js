@@ -16,6 +16,7 @@ console.log('Hello!');
 console.log('Hello, My name is %s.', 'Lee');
 
 // Styled
+console.log('%cBlue', 'color:blue; font-size:30px;');
 
 // warning!
 
