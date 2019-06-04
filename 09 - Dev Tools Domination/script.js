@@ -19,6 +19,7 @@ console.log('Hello, My name is %s.', 'Lee');
 console.log('%cBlue', 'color:blue; font-size:30px;');
 
 // warning!
+console.warn('Warning!!!');
 
 // Error :|
 
