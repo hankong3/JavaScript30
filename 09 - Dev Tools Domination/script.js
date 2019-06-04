@@ -68,3 +68,10 @@ console.count('Mario');
 console.count('Luigi');
 
 // timing
+console.time('fetching data');
+fetch('https://jsonplaceholder.typicode.com/users/3')
+    .then(data => data.json())
+    .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+    });
