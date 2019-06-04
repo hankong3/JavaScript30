@@ -13,6 +13,7 @@ function makeGreen() {
 console.log('Hello!');
 
 // Interpolated
+console.log('Hello, My name is %s.', 'Lee');
 
 // Styled
 
