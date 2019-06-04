@@ -25,6 +25,7 @@ console.warn('Warning!!!');
 console.error('Error⛔');
 
 // Info
+console.info('Kiwi or kiwis are flightless birds native to New Zealand, in the genus Apteryx and family Apterygidae.');
 
 // Testing
 // const p = document.querySelector('p');
