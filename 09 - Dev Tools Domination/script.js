@@ -56,5 +56,15 @@ dogs.forEach(dog => {
 });
 
 // counting
+console.count('Mario');
+console.count('Mario');
+console.count('Luigi');
+console.count('Luigi');
+console.count('Mario');
+console.count('Yoshi');
+console.count('Yoshi');
+console.count('Yoshi');
+console.count('Mario');
+console.count('Luigi');
 
 // timing
