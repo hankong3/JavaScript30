@@ -21,9 +21,15 @@ function handleProgress() {
     progressBar.style.flexBasis = `${percent}%`;
 }
 
+function skip() {
+    // parseFloat()는 문자열을 실수로 변환
+    video.currentTime += parseFloat(this.dataset.skip);
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', toggleButton);
 video.addEventListener('pause', toggleButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);
+skipButtons.forEach(button => button.addEventListener('click', skip));
