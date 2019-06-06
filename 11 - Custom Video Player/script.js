@@ -30,8 +30,9 @@ function handleRange() {
     video[this.name] = this.value;
 }
 
-function handleProgress() {
-    console.log(this);
+function handleProgress(e) {
+    const updateTime = (e.offsetX / progress.offsetWidth) * video.duration;
+    video.currentTime = updateTime;
 }
 
 video.addEventListener('click', togglePlay);
@@ -44,4 +45,8 @@ skipButtons.forEach(button => button.addEventListener('click', skip));
 ranges.forEach(range => range.addEventListener('mousemove', handleRange));
 ranges.forEach(range => range.addEventListener('change', handleRange));
 
+let mouseDown = false;
 progress.addEventListener('click', handleProgress);
+progress.addEventListener('mousemove', (e) => mouseDown && handleProgress(e));
+progress.addEventListener('mousedown', () => mouseDown = true);
+progress.addEventListener('mouseup', () => mouseDown = false);
