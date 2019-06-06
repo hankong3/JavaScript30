@@ -25,3 +25,5 @@ video.addEventListener('click', togglePlay);
 video.addEventListener('play', toggleButton);
 video.addEventListener('pause', toggleButton);
 video.addEventListener('timeupdate', handleProgress);
+
+toggle.addEventListener('click', togglePlay);
