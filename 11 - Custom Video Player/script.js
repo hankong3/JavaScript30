@@ -16,6 +16,12 @@ function toggleButton() {
     toggle.textContent = icon;
 }
 
+function handleProgress() {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressBar.style.flexBasis = `${percent}%`;
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', toggleButton);
 video.addEventListener('pause', toggleButton);
+video.addEventListener('timeupdate', handleProgress);
