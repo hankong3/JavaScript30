@@ -16,7 +16,7 @@ function toggleButton() {
     toggle.textContent = icon;
 }
 
-function handleProgress() {
+function handleCurrentTime() {
     const percent = (video.currentTime / video.duration) * 100;
     progressBar.style.flexBasis = `${percent}%`;
 }
@@ -30,12 +30,18 @@ function handleRange() {
     video[this.name] = this.value;
 }
 
+function handleProgress() {
+    console.log(this);
+}
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', toggleButton);
 video.addEventListener('pause', toggleButton);
-video.addEventListener('timeupdate', handleProgress);
+video.addEventListener('timeupdate', handleCurrentTime);
 
 toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
 ranges.forEach(range => range.addEventListener('mousemove', handleRange));
 ranges.forEach(range => range.addEventListener('change', handleRange));
+
+progress.addEventListener('click', handleProgress);
