@@ -23,6 +23,8 @@ const members = players;
 console.log(players, members);
 
 // You might think we can just do something like this (ex: const team = players; team[3] = 'Yoshi';):
+members[3] = 'Yoshi';
+console.log(players, members);
 
 // however what happens when we update that array?
 
