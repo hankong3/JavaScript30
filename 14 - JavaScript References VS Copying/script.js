@@ -42,11 +42,14 @@ const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 // one way
 
 // or create a new array and concat the old one in
-const members3 = [].concat(players);
-members3[3] = 'Yoshi';
-console.log(players, members3);
+// const members3 = [].concat(players);
+// members3[3] = 'Yoshi';
+// console.log(players, members3);
 
 // or use the new ES6 Spread
+const members4 = [...players];
+members4[1] = 'Luigi';
+console.log(players, members4);
 
 // now when we update it, the original one isn't changed
 
