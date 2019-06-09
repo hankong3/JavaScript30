@@ -47,9 +47,9 @@ const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 // console.log(players, members3);
 
 // or use the new ES6 Spread
-const members4 = [...players];
-members4[1] = 'Luigi';
-console.log(players, members4);
+// const members4 = [...players];
+// members4[1] = 'Luigi';
+// console.log(players, members4);
 
 // now when we update it, the original one isn't changed
 
@@ -62,6 +62,9 @@ const person = {
 };
 
 // and think we make a copy:
+const player = person;
+player.name = 'Lee';
+console.log(person, player);
 
 // how do we take a copy instead?
 
