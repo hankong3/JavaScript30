@@ -90,3 +90,8 @@ const info2 = Object.assign({}, info);
 info2.number = 33;
 console.clear();
 console.log(info, info2);
+
+const info3 = JSON.parse(JSON.stringify(info));
+info3.name = 'Lee';
+console.clear();
+console.log(info, info3);
