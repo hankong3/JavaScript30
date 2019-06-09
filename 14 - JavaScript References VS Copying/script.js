@@ -19,8 +19,10 @@ console.log(bool);
 const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
 // and we want to make a copy of it.
+const members = players;
+console.log(players, members);
 
-// You might think we can just do something like this:
+// You might think we can just do something like this (ex: const team = players; team[3] = 'Yoshi';):
 
 // however what happens when we update that array?
 
