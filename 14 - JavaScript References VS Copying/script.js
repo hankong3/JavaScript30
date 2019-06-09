@@ -1,4 +1,19 @@
 // start with strings, numbers and booleans
+let name = 'Mario';
+console.log(name);
+name = 'Yoshi'
+console.log(name);
+
+let num = 100;
+let num2 = 200;
+console.log(num, num2);
+num2 = 300;
+console.log(num, num2);
+
+let bool = false;
+console.log(bool);
+bool = true;
+console.log(bool);
 
 // Let's say we have an array
 const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
