@@ -62,11 +62,13 @@ const person = {
 };
 
 // and think we make a copy:
-const player = person;
-player.name = 'Lee';
-console.log(person, player);
+// const player = person;
+// player.name = 'Lee';
+// console.log(person, player);
 
 // how do we take a copy instead?
+const player2 = Object.assign({}, person, { name: 'Lee', age: 20, number: 3 });
+console.log(person, player2);
 
 // We will hopefully soon see the object ...spread
 
