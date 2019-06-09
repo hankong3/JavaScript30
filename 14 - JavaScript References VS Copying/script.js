@@ -35,13 +35,16 @@ const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
 // So, how do we fix this? We take a copy instead!
-const members2 = players.slice();
-members2[2] = 'Mario';
-console.log(players, members2);
+// const members2 = players.slice();
+// members2[2] = 'Mario';
+// console.log(players, members2);
 
 // one way
 
 // or create a new array and concat the old one in
+const members3 = [].concat(players);
+members3[3] = 'Yoshi';
+console.log(players, members3);
 
 // or use the new ES6 Spread
 
