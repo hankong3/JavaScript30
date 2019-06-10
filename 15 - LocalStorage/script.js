@@ -11,6 +11,7 @@ function addItem(e) {
     }
 
     items.push(item);
+    localStorage.setItem('items', JSON.stringify(items));
     this.reset();
 }
 
