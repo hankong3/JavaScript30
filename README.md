@@ -7,8 +7,6 @@ End Date: May 21, 2019
 
 It was too hard training😅.  
 But pure JavaScript was an interesting experience.  
-This time, I often referred to the video.  
-I'll do it by myself next time.  
 
 ## Second Challenge
 Start Date: May 27, 2019
