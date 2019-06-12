@@ -5,7 +5,7 @@ JavaScript30 Challenge
 Start Date: Apr 22, 2019  
 End Date: May 21, 2019
 
-It was too hard training😅.  
+It was too hard😅.  
 But pure JavaScript was an interesting experience.  
 
 ## Second Challenge
