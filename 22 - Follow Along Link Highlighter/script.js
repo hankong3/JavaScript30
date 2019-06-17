@@ -4,7 +4,7 @@ const highlight = document.createElement('span');
 highlight.classList.add('highlight');
 document.body.appendChild(highlight);
 
-function highlightLink(e) {
+function highlightLink() {
     const linkCoords = this.getBoundingClientRect();
     const coords = {
         width: linkCoords.width,
