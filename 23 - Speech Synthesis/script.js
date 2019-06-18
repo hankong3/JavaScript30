@@ -18,5 +18,10 @@ function setVoice() {
     msg.voice = voices.find(voice => voice.name === this.value);
 }
 
+function setOption() {
+    msg[this.name] = this.value;
+}
+
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 voicesDropdown.addEventListener('change', setVoice);
+options.forEach(option => option.addEventListener('change', setOption));
