@@ -15,7 +15,6 @@ function populateVoices() {
 }
 
 function setVoice() {
-    console.log(this.value);
     msg.voice = voices.find(voice => voice.name === this.value);
     speakMsg();
 }
@@ -25,11 +24,13 @@ function setOption() {
     speakMsg();
 }
 
-function speakMsg() {
+function speakMsg(startOver = true) {
     speechSynthesis.cancel();
-    speechSynthesis.speak(msg);
+    if (startOver) speechSynthesis.speak(msg);
 }
 
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 voicesDropdown.addEventListener('change', setVoice);
 options.forEach(option => option.addEventListener('change', setOption));
+speakButton.addEventListener('click', speakMsg);
+stopButton.addEventListener('click', () => speakMsg(false));
