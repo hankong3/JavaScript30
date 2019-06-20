@@ -1,7 +1,7 @@
 const divs = document.querySelectorAll('div');
 
 function logText(e) {
-    // e.stopPropagation();
+    e.stopPropagation();
     console.log(this.classList.value);
 }
 
