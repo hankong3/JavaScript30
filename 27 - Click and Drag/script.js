@@ -6,6 +6,8 @@ let scrollLeft;
 slider.addEventListener('mousedown', (e) => {
     isDown = true;
     slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
 });
 slider.addEventListener('mouseup', () => {
     isDown = false;
