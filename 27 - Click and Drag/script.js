@@ -14,5 +14,12 @@ slider.addEventListener('mousedown', (e) => {
     startX = e.pageX;
     scrollLeft = slider.scrollLeft;
 });
+slider.addEventListener('mousemove', (e) => {
+    if (!isClick) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const move = (x - startX) * 3;
+    slider.scrollLeft = scrollLeft - move;
+});
 slider.addEventListener('mouseup', stopSlider);
 slider.addEventListener('mouseleave', stopSlider);
