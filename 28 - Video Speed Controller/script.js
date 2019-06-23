@@ -7,6 +7,8 @@ function moveBar(e) {
     const percent = y / this.offsetHeight;
     const min = 0.4;
     const max = 4;
+    const height = Math.round(percent * 100) + '%';
+    speedBar.style.height = height;
 }
 
 speed.addEventListener('mousemove', moveBar);
