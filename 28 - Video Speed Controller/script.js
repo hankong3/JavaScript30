@@ -11,6 +11,7 @@ function moveBar(e) {
     const playbackRate = percent * (max - min) + min;
     speedBar.style.height = height;
     speedBar.textContent = playbackRate.toFixed(2) + 'x';
+    video.playbackRate = playbackRate;
 }
 
 speed.addEventListener('mousemove', moveBar);
