@@ -40,3 +40,12 @@ function startGame() {
     peep();
     setTimeout(() => timeUp = true, 10000);
 }
+
+function clickedMole(e) {
+    if (!e.isTrusted) return;
+    score++;
+    this.classList.remove('up');
+    scoreBoard.textContent = score;
+}
+
+moles.forEach(mole => mole.addEventListener('click', clickedMole));
